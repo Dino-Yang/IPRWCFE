@@ -1,0 +1,43 @@
+<div class="loginBox" [@enter]>
+  <div class="login">
+    <div class="spacer"></div>
+    <form [formGroup]="loginForm" id="inputForm" style="display: flex;flex-direction: column">
+
+      <h3 class="fw-normal mb-3 pb-3 loginLabel">LOG IN</h3>
+
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" required>
+        <mat-error *ngIf="loginForm.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="formField">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <mat-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-icon>
+        <mat-error *ngIf="loginForm.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      <div class="pt-1 mb-4">
+        <button [disabled]="loading" class="btn btn-info btn-lg btn-block loginBtn" type="button"
+                (click)="login()">LOG IN
+        </button>
+        <p [hidden]="!failedAuth" class="mt-1" style="color: red">Invalid credentials, please try again</p>
+      </div>
+      <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#"></a></p>
+    </form>
+  </div>
+  <div class="register">
+    <div class="spacer"></div>
+    <h3 class="fw-normal mb-3 pb-3 loginLabel" style="font-weight: bolder;letter-spacing: 1px;font-size: 2rem;">
+      REGISTER</h3>
+    <h2 style="font-weight: normal">CREATE AN ACCOUNT TODAY. WITHOUT ONE, YOU WON'T BE ABLE TO MAKE ANY PURCHASES ON
+      OMINBOMIN.NL.</h2>
+    <h2 style="font-weight: normal">DON'T WAIT, JOIN THE OMINBOMIN FAMILY AND UPGRADE YOUR SHOPPING EXPERIENCE NOW.</h2>
+    <button class="btn btn-info btn-lg btn-block loginBtn" routerLink="/register">REGISTER</button>
+  </div>
+</div>
+

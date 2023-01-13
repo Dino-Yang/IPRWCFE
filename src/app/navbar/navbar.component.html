@@ -1,0 +1,27 @@
+<nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center">
+  <a routerLink="/" class="navbar-brand d-flex w-50 mr-auto" style="margin-left: 1rem;font-weight: 700;">OminBomin</a>
+  <button class="navbar-toggler" type="button" style="margin-right: 1rem" (click)="openOffCanvas()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse w-100">
+    <ul class="navbar-nav w-100 justify-content-center">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/about">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/collections">COLLECTIONS</a>
+      </li>
+      <li *ngIf="isAdmin" class="nav-item">
+        <a class="nav-link" routerLink="/admin">ADMIN</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto w-100 justify-content-end" style="padding-right: 1rem">
+      <li class="nav-item icon">
+        <mat-icon class="material-icons" (click)="goToAccount()">account_circle</mat-icon>
+      </li>
+      <li class="nav-item icon">
+        <mat-icon (click)="open()">shopping_cart</mat-icon>
+      </li>
+    </ul>
+  </div>
+</nav>

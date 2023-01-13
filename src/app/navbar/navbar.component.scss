@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  src: url(https://fonts.gstatic.com/s/materialicons/v129/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.nav-link {
+  font-weight: bold;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+.material-icons {
+  font-family: 'Material Icons', serif;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.icon {
+  margin-left: 1rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar {
+    justify-content: space-between !important;
+  }
+}
+

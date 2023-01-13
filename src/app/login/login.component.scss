@@ -1,0 +1,63 @@
+.loginBtn {
+  margin-top: 2rem;
+  background-color: black;
+  border: none;
+  color: white;
+  display: flex;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  border-radius: 0;
+  justify-content: center;
+}
+
+.loginBtn:active {
+  background-color: #2B2826;
+  color: white;
+}
+
+.loginBtn:hover {
+  background-color: #2B2826;
+}
+
+.loginLabel {
+  letter-spacing: 1px;
+  font-size: 2rem;
+}
+
+.loginBox {
+  display: flex;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.register {
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 30%;
+}
+
+.spacer {
+  height: 20%;
+}
+
+@media only screen and (max-width: 767px) {
+  .loginBox {
+    flex-direction: column;
+  }
+  .register {
+    margin-left: 0;
+    width: 100%;
+  }
+}

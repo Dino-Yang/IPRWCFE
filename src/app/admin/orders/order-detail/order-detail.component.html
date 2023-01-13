@@ -1,0 +1,28 @@
+<div class="modal-header">
+  <h1 class="modal-title" style="font-weight: bold">ORDER: {{order.id}}</h1>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+  <h1 style="font-weight: bold">PRODUCTS</h1>
+  <div
+    style="display: flex;flex-direction: row; overflow-x: auto; border-bottom: #dee2e6 solid 1px; border-top: #dee2e6 solid 1px;">
+    <div *ngFor="let product of products"
+         style="display: flex;flex-direction: column; align-items: center;">
+      <img src="../../../../assets/Art/{{product.name}}.png" class="smallImage" alt="image">
+      <h1 style="font-weight: bolder;font-size: 1rem; margin-right: 1rem">{{product.name}}</h1>
+    </div>
+  </div>
+  <div *ngIf="shippingDetails!==undefined">
+    <h1 style="font-weight: bold">SHIPPING DETAILS</h1>
+    <h2>FIRST NAME: {{shippingDetails.firstName}}</h2>
+    <h2>LAST NAME: {{shippingDetails.lastName}}</h2>
+    <h2>ADDRESS: {{shippingDetails.address}}</h2>
+    <h2>ZIP CODE: {{shippingDetails.zipcode}}</h2>
+    <h2>COUNTRY: {{shippingDetails.country}}</h2>
+    <h2>PAYMENT METHOD: {{order.method}}</h2>
+  </div>
+  <h1 style="margin-top: 5px">Total Price: {{price| number:'1.2-2'}}</h1>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>
