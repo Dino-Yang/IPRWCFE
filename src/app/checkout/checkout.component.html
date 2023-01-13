@@ -1,0 +1,56 @@
+<ng-template [ngIf]="hasUserDetails">
+  <div class="checkoutBox">
+    <div class="title">CHECKOUT</div>
+    <div class="box">
+      <div class="formBox">
+        <form [formGroup]="shippingForm" id="inputForm" class="form">
+          <h1>SHIPPING DETAILS</h1>
+          <mat-form-field class="field">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName">
+            <mat-error *ngIf="this.f['firstName'].errors?.['required']">First name is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="field">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName">
+            <mat-error *ngIf="this.f['lastName'].errors?.['required']">Last name is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="field">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="address">
+            <mat-error *ngIf="this.f['address'].errors?.['required']">Address is required</mat-error>
+            <mat-error *ngIf="this.f['address'].errors?.['pattern']">Street + Number of house(e.g 'Abc 123')</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="field">
+            <mat-label>Zip code</mat-label>
+            <input matInput formControlName="zipcode">
+            <mat-error *ngIf="this.f['zipcode'].errors?.['required']">Password is required</mat-error>
+            <mat-error *ngIf="this.f['zipcode'].errors?.['pattern']">Zip code requires both letters and numbers
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="field">
+            <mat-label>Country</mat-label>
+            <mat-select id="country" formControlName="country">
+              <mat-option *ngFor="let country of countries" [value]="country.name">{{country.name}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="this.f['country'].errors?.['required']">Country is required</mat-error>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="buyBox">
+        <h1>TOTAL: €{{totalPrice|number:'1.2-2'}}</h1>
+        <mat-button-toggle-group [(ngModel)]="method" vertical style="width: 90%">
+          <mat-button-toggle *ngFor="let option of options" value="{{option}}">
+            {{option}}
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+        <mat-error *ngIf="method == ''">Method is required</mat-error>
+        <button class="buyBtn" (click)="buy()">BUY NOW</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

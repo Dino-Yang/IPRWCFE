@@ -1,0 +1,27 @@
+<div class="cartBox" [@enter]>
+  <h1 class="title">CART</h1>
+  <div class="cartInfo">
+    <div style="margin-bottom: 1rem">
+      <div class="smallProduct" *ngFor="let product of products" [@leave]>
+        <img class="smallImage" [routerLink]="['/products',product.id]" src="assets/Art/{{product.name}}.png"
+             alt="Photo of {{product.name}}">
+        <div class="productBody"
+             style="display: flex;flex-direction: column;justify-content: center; margin-right: 1rem">
+          <h1>{{product.name}}</h1>
+          <p style="margin-top: auto;margin-bottom: 0">{{product.designer}}</p>
+        </div>
+        <div style=" display: flex;flex-direction: column;margin-left:auto">
+          <button class="deleteBtn" (click)="delete(product)">DELETE ITEM</button>
+          <p style="margin-top: auto;margin-bottom: 0">€{{product.price}}</p>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex;flex-direction: column;margin-bottom: 1rem">
+      <p style="margin-left: auto;margin-right: 1rem">TOTAL: €{{totalPrice|number :'1.2-2'}}</p>
+      <button class="checkoutBtn" routerLink="/checkout">GO CHECKOUT</button>
+    </div>
+  </div>
+</div>
+
+
+

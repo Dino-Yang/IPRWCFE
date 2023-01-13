@@ -1,0 +1,34 @@
+<ng-template [ngIf]="isDesktop">
+  <div class="accountBox" [@enter]>
+    <div class="sideBar">
+      <ul>
+        <li class="listItem" [ngClass]="{'active': scene === 'products'}" (click)="swapScene('products')">
+          <mat-icon class="material-icons">inventory</mat-icon>
+          <h1>Products</h1>
+        </li>
+        <li class="listItem" [ngClass]="{'active': scene === 'orders'}" (click)="swapScene('orders')">
+          <mat-icon class="material-icons">local_shipping</mat-icon>
+          <h1>Orders</h1>
+        </li>
+        <li class="listItem" [ngClass]="{'active': scene === 'users'}" (click)="swapScene('users')">
+          <mat-icon class="material-icons">people</mat-icon>
+          <h1>Users</h1>
+        </li>
+      </ul>
+    </div>
+    <div class="scene" [ngSwitch]="scene">
+      <app-products *ngSwitchCase="'products'"></app-products>
+      <app-orders *ngSwitchCase="'orders'"></app-orders>
+      <app-users *ngSwitchCase="'users'"></app-users>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template [ngIf]="!isDesktop">
+  <div class="mobileBox">
+    <h1 [@enter] class="textMobile">ADMIN IS ONLY AVAILABLE ON DESKTOP SIZED SCREENS(WIDTH OF SCREEN > 992)</h1>
+  </div>
+</ng-template>
+
+
+

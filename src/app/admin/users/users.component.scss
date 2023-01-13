@@ -1,0 +1,30 @@
+.userTable {
+  height: 60vh;
+  width: 60vw;
+  overflow-y: auto;
+  overflow-x: auto;
+
+  button {
+    border-radius: 5px;
+    border: none;
+  }
+
+  .disableBtn {
+    background-color: #C78283;
+    transition: .5s;
+  }
+
+  .disableBtn:hover {
+    background-color: #865758;
+  }
+
+  .enableBtn {
+    background-color: #6eab61;
+    transition: .5s;
+  }
+
+  .enableBtn:hover {
+    background-color: #375631;
+  }
+}
+

@@ -1,0 +1,47 @@
+<div class="userDetailsBox" [@enter]>
+  <div class="spacer"></div>
+  <form [formGroup]="userDetails" id="inputForm" class="form">
+    <h1>ACCOUNT DETAILS</h1>
+    <mat-form-field class="field">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName">
+      <mat-error *ngIf="this.f['firstName'].errors?.['required']">First name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName">
+      <mat-error *ngIf="this.f['lastName'].errors?.['required']">Last name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address">
+      <mat-error *ngIf="this.f['address'].errors?.['required']">Address is required</mat-error>
+      <mat-error *ngIf="this.f['address'].errors?.['pattern']">Street + Number of house(e.g 'Abc 123')</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>Zip code</mat-label>
+      <input matInput formControlName="zipcode">
+      <mat-error *ngIf="this.f['zipcode'].errors?.['required']">Password is required</mat-error>
+      <mat-error *ngIf="this.f['zipcode'].errors?.['pattern']">Zip code requires both letters and numbers</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>Country</mat-label>
+      <mat-select id="country" formControlName="country">
+        <mat-option *ngFor="let country of countries" [value]="country.name">{{country.name}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="this.f['country'].errors?.['required']">Country is required</mat-error>
+    </mat-form-field>
+
+
+    <div class="form-group">
+      <button type="submit" class="btn registerBtn" (click)="onSubmit()">SAVE DETAILS</button>
+    </div>
+  </form>
+</div>
+
+
+

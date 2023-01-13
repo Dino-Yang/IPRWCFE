@@ -1,0 +1,57 @@
+<div class="modal-header">
+  <h4 class="modal-title">Hi there!</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="productDetails" id="inputForm" class="form">
+    <h1>PRODUCT DETAILS</h1>
+    <mat-form-field class="field">
+      <mat-label>CATEGORY</mat-label>
+      <select matNativeControl required formControlName="categoryId">
+        <option value="1">Digital</option>
+        <option value="2">Paint</option>
+        <option value="3">AI</option>
+      </select>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>NAME</mat-label>
+      <input matInput required formControlName="name">
+      <mat-error *ngIf="this.f['name'].errors?.['required']">Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>PRICE</mat-label>
+      <input matInput required formControlName="price">
+      <mat-error *ngIf="this.f['price'].errors?.['required']">Price is required</mat-error>
+      <mat-error *ngIf="this.f['price'].errors?.['pattern']">Only numbers and (.) allowed</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>STOCK</mat-label>
+      <input matInput required formControlName="stock">
+      <mat-error *ngIf="this.f['stock'].errors?.['required']">Stock is required</mat-error>
+      <mat-error *ngIf="this.f['stock'].errors?.['pattern']">Only numbers allowed</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>DESCRIPTION</mat-label>
+      <input matInput required formControlName="description">
+      <mat-error *ngIf="this.f['description'].errors?.['required']">Description is required</mat-error>
+      <mat-error *ngIf="this.f['description'].errors?.['maxLength']">Must be under 255 characters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>DESIGNER</mat-label>
+      <input matInput required formControlName="designer">
+      <mat-error *ngIf="this.f['designer'].errors?.['required']">Designer is required</mat-error>
+      <mat-error *ngIf="this.f['designer'].errors?.['pattern']">Must be under 255 characters</mat-error>
+    </mat-form-field>
+
+    <mat-checkbox labelPosition="after" formControlName="enabled">ENABLED?</mat-checkbox>
+  </form>
+</div>
+<div class="modal-footer" style="display: flex;flex-direction: row;align-content: center">
+  <button type="submit" class="btn registerBtn" (click)="onSubmit()">SAVE DETAILS</button>
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

@@ -1,0 +1,92 @@
+.cartBox {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.itemImage {
+  width: 50%;
+}
+
+.cart-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px black solid;
+  overflow-x: hidden;
+  align-items: center;
+}
+
+.removeButton {
+  border: none;
+  background-color: transparent;
+  padding-left: 0;
+  height: fit-content;
+  margin-top: .5rem;
+  border-bottom: 1px transparent solid;
+}
+
+.removeButton:hover {
+  border-bottom: 1px black solid;
+}
+
+.amountPicker {
+  display: flex;
+  flex-direction: row;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: .5rem;
+}
+
+.footer {
+  margin-bottom: 3rem;
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: white;
+  margin-top: 1rem;
+}
+
+.cartButton {
+  border-radius: 25px;
+  font-size: 2rem;
+  padding: 1rem;
+  background-color: #2B2826;
+  color: white;
+  transition: .5s;
+}
+
+.cartButton:hover {
+  color: black;
+  background-color: white;
+}
+
+.empty {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.continueButton {
+  border-radius: 25px;
+  font-size: 1rem;
+  padding: .5rem;
+  background-color: white;
+  color: black;
+  transition: .5s;
+}
+
+.continueButton:hover {
+  color: white;
+  background-color: #2B2826;
+}
+
+

@@ -1,0 +1,28 @@
+<div class="offcanvas-header">
+  <h1 style="margin: 0">MENU</h1>
+  <button
+    type="button"
+    class="btn-close text-reset"
+    aria-label="Close"
+    (click)="activeOffcanvas.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="offcanvas-body">
+  <ul class="navbar-nav w-100 justify-content-center">
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/about" (click)="activeOffcanvas.dismiss('Cross click')">ABOUT</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/collections" (click)="activeOffcanvas.dismiss('Cross click')">COLLECTIONS</a>
+    </li>
+    <li *ngIf="isAdmin" class="nav-item">
+      <a class="nav-link" routerLink="/admin" (click)="activeOffcanvas.dismiss('Cross click')">ADMIN</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="open()">CART</a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link" routerLink="/admin" (click)="goToAccount()">ACCOUNT</a>
+    </li>
+  </ul>
+</div>

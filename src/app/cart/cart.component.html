@@ -1,0 +1,31 @@
+<div class="cartBox">
+  <div class="offcanvas-header" style="border-bottom: 1px black solid">
+    <h1 class="offcanvas-title">Cart</h1>
+    <button
+      type="button"
+      class="btn-close text-reset"
+      aria-label="Close"
+      (click)="activeOffcanvas.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="offcanvas-body" style="padding: 0; overflow: auto">
+    <ng-container *ngIf="items.length !== 0">
+      <div class="cart-item" *ngFor="let item of items; index as i" [@leave]>
+        <img src="assets/Art/{{item.name}}.png" alt="Photo of {{item.name}}" class="itemImage">
+        <div class="itemDetails">
+          <span style="font-weight: bold; font-size: 1rem">{{ item.name }}</span>
+          <span>{{ item.price | currency }}</span>
+          <button class="removeButton" (click)="removeItem(item)">Remove Item</button>
+        </div>
+      </div>
+    </ng-container>
+    <div class="empty" *ngIf="items.length === 0 " [@enter]>
+      <p style="font-size: 1.5rem">CART IS EMPTY</p>
+      <button class="continueButton" (click)="activeOffcanvas.close('Close click')">Continue Shopping</button>
+    </div>
+  </div>
+  <div *ngIf="items.length !== 0 " class="footer" [@leave]>
+    <button class="cartButton" (click)="goToCart()">Go to Cart
+    </button>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+.checkoutBox {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.spacer {
+  width: 20%;
+}
+
+.title {
+  font-size: 4rem;
+  align-self: center;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.buyBtn {
+  background-color: black;
+  border: none;
+  color: white;
+  display: flex;
+  padding: .5rem 4rem;
+  border-radius: 0;
+  justify-content: center;
+  transition: .5s;
+  width: 90%;
+}
+
+.buyBtn:active {
+  background-color: #2B2826;
+  color: white;
+}
+
+.buyBtn:hover {
+  background-color: #2B2826;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+}
+
+.formBox {
+  border: #dee2e6 1px solid;
+  border-radius: 5px;
+  width: 60vw;
+  margin-right: 1rem;
+}
+
+.buyBox {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  border-radius: 5px;
+  border: #dee2e6 1px solid;
+  align-items: center;
+  justify-content: space-around
+}
+
+@media only screen and (max-width: 992px) {
+  .buyBox {
+    width: 90vw;
+  }
+  .formBox {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .checkoutBox {
+    width: 90vw;
+  }
+  .box {
+    flex-direction: column;
+  }
+  .form {
+
+  }
+}
+
+

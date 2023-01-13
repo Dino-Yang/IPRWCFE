@@ -1,0 +1,70 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-left: 20%;
+}
+
+.spacer {
+  height: 20%;
+}
+
+.userDetailsBox {
+  height: 100vh;
+}
+
+.field {
+  width: 70%;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.registerBtn {
+  margin-top: 5rem;
+  background-color: black;
+  border: none;
+  color: white;
+  display: flex;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  border-radius: 0;
+  justify-content: center;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+}
+
+.registerBtn:active {
+  background-color: #2B2826;
+  color: white;
+}
+
+.registerBtn:hover {
+  background-color: #2B2826;
+}
+
+@media only screen and (max-width: 822px) {
+  .spacer {
+    height: 10%;
+  }
+  .textBox {
+    width: 90%;
+  }
+  .form {
+    width: 100%;
+    margin-left: 0;
+  }
+  .registerBtn {
+    margin-bottom: 1rem;
+  }
+  .box {
+    margin-left: 10%;
+    flex-direction: column;
+  }
+}

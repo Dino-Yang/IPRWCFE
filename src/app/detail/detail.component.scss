@@ -1,0 +1,52 @@
+.detailsBox {
+  overflow: hidden;
+  width: 100vw;
+}
+
+.productBox {
+  margin: 1em auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.productBox > img {
+  margin-top: 3rem;
+  width: 40%;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 30%;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.details > button {
+  margin-top: 4rem;
+  bottom: 0;
+}
+
+.addButton {
+  width: 100%;
+  background-color: #050404;
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1243px) {
+  .productBox {
+    align-items: center;
+    flex-direction: column;
+
+    img {
+      width: 90%;
+    }
+  }
+  .details {
+    width: 90%;
+  }
+}

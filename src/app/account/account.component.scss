@@ -1,0 +1,57 @@
+.accountBox {
+  display: flex;
+  width: 90vw;
+  margin-top: 10rem;
+  margin-left: auto;
+  overflow-y: hidden;
+}
+
+.sideBar {
+  width: 30vw;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: row;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  transition: .5s;
+  width: 80%;
+  border-radius: 1rem;
+  padding-left: 1rem;
+
+  h1 {
+    color: black;
+    margin: 0;
+  }
+}
+
+.listItem:hover {
+  background-color: #dedede;
+}
+
+.active {
+  background-color: #dedede;
+}
+
+.material-icons {
+  height: 30px;
+  font-size: 30px;
+  width: 30px;
+  color: black;
+}
+
+@media only screen and (max-width: 964px) {
+  .accountBox {
+    flex-direction: column;
+    width: 100vw;
+    margin-top: 0;
+  }
+
+  .sideBar {
+    width: 50%;
+  }
+  ul > li {
+    display: inline-block;
+  }
+}

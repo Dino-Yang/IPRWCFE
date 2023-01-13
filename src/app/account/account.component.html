@@ -1,0 +1,24 @@
+<div class="accountBox" [@enter]>
+  <ng-template [ngIf]="hasUserDetails">
+    <div class="sideBar">
+      <ul>
+        <li class="listItem" [ngClass]="{'active': scene === 'account'}" (click)="swapScene('account')">
+          <mat-icon class="material-icons">account_circle</mat-icon>
+          <h1>Account Details</h1>
+        </li>
+        <li class="listItem" [ngClass]="{'active': scene === 'history'}" (click)="swapScene('history')">
+          <mat-icon class="material-icons">local_shipping</mat-icon>
+          <h1>Order History</h1>
+        </li>
+        <li class="listItem" (click)="logOut()" routerLink="/collections">
+          <mat-icon class="material-icons">logout</mat-icon>
+          <h1>Log out</h1>
+        </li>
+      </ul>
+    </div>
+    <div class="scene" [ngSwitch]="scene">
+      <app-account-details *ngSwitchCase="'account'"></app-account-details>
+      <app-history *ngSwitchCase="'history'"></app-history>
+    </div>
+  </ng-template>
+</div>

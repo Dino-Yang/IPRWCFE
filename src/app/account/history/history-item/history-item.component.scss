@@ -1,0 +1,53 @@
+.smallImage {
+  width: 15rem;
+  padding: 5px;
+}
+
+.itemBox {
+  width: 60vw;
+  margin-bottom: 1rem;
+}
+
+.productBox {
+  border-radius: 5px;
+  border: #DDDDDD 1px solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.products {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.detailsBtn {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border: black 1px solid;
+  width: fit-content;
+  margin: 5px;
+  transition: .5s;
+}
+
+.detailsBtn:hover {
+  background-color: black;
+  color: white;
+}
+
+@media only screen and (max-width: 964px) {
+  .itemBox {
+    width: 90vw;
+  }
+}

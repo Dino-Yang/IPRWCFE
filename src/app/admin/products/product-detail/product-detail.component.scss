@@ -1,0 +1,27 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.registerBtn {
+  background-color: black;
+  border: none;
+  color: white;
+  display: flex;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  border-radius: 0;
+  justify-content: center;
+}
+
+.registerBtn:active {
+  background-color: #2B2826;
+  color: white;
+}
+
+.registerBtn:hover {
+  background-color: #2B2826;
+}
+
+

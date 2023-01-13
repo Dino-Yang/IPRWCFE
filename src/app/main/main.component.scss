@@ -1,0 +1,39 @@
+.mainBox {
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.title {
+  line-height: 100%;
+  font-size: 5rem;
+  letter-spacing: 1rem;
+}
+
+.spacer {
+  height: 20vh;
+}
+
+.goToBtn {
+  border: none;
+  background-color: transparent;
+  font-size: 3rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.goToBtn:hover {
+  border-bottom: 1px black solid;
+}
+
+
+@media only screen and (max-width: 992px) {
+  .title {
+    font-size: 3rem;
+  }
+  .goToBtn {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,62 @@
+.accountBox {
+  display: flex;
+  width: 90vw;
+  margin-top: 10rem;
+  margin-left: auto;
+  overflow-y: hidden;
+}
+
+.mobileBox {
+  display: flex;
+  justify-content: center;
+  width: 95vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.textMobile {
+  margin-top: 10%;
+  width: 50%;
+  font-weight: bold;
+}
+
+.sideBar {
+  width: 30vw;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: row;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  transition: .5s;
+  width: 80%;
+  border-radius: 1rem;
+  padding-left: 1rem;
+
+  h1 {
+    color: black;
+    margin: 0;
+  }
+}
+
+.listItem:hover {
+  background-color: #dedede;
+}
+
+.active {
+  background-color: #dedede;
+}
+
+.material-icons {
+  height: 30px;
+  font-size: 30px;
+  width: 30px;
+  color: black;
+}
+
+@media only screen and (max-width: 964px) {
+  .accountBox {
+    width: 96vw;
+  }
+}

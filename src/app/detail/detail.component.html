@@ -1,0 +1,11 @@
+<div class="detailBox" *ngIf="product" style="overflow: hidden">
+  <div class="productBox" *ngIf="product" [@enter]>
+    <img src="assets/Art/{{product.name}}.png" alt="Photo of {{product.name}}" class="img">
+    <div class="details">
+      <h3>{{ product.name }}</h3>
+      <h4>{{ product.price | currency }}</h4>
+      <p>{{ product.description }}</p>
+      <button (click)="addToCart(product)" class="addButton">Add to Cart</button>
+    </div>
+  </div>
+</div>
