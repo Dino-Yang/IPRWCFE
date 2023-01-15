@@ -91,7 +91,7 @@ export class CreateComponent {
     let newUser = User.createUserWithoutId(this.user.value.username, this.user.value.email, this.user.value.password, true);
     this.userService.saveUser(newUser).subscribe({
       next: () => {
-        this.router.navigate(['/account']);
+        this.router.navigate(['/userDetails']);
       },
     })
   }

@@ -31,6 +31,7 @@ export class DetailsComponent {
   }
 
   ngOnInit(): void {
+    let userId = this.authService.getLoggedInUserId();
     this.userDetails = this.formBuilder.group(
       {
         firstName: [
