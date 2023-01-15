@@ -16,6 +16,11 @@
   width: 20%;
 }
 
+.password {
+  display: flex;
+  flex-direction: row;
+}
+
 .registerBtn {
   margin-top: 5rem;
   background-color: black;
@@ -36,3 +41,31 @@
 .registerBtn:hover {
   background-color: #2B2826;
 }
+
+
+@media only screen and (max-width: 822px) {
+  .password {
+    flex-direction: column;
+  }
+  .spacer {
+    height: 10%;
+  }
+  .textBox {
+    width: 90%;
+  }
+  .field {
+    width: 100%;
+  }
+  .form {
+    width: 100%;
+    margin-left: 0;
+  }
+  .registerBtn {
+    margin-bottom: 1rem;
+  }
+  .box {
+    margin-left: 10%;
+    flex-direction: column;
+  }
+}
+
